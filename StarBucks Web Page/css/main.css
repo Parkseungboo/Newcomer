@@ -1,9 +1,11 @@
+/* 공통 스타일 */
 body{
     color:#333;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.4;
     font-family: 'Nanum Gothic',sans-serif;
+    height: 3000px;
 }
 
 img{
@@ -14,17 +16,24 @@ a{
     text-decoration: none;
 }
 
+.inner{
+    width: 1100px;
+    position: relative;
+    margin: 0 auto;
+}
+
+/* 헤더 스타일 */
 header{
+    position: fixed;
     background-color: #f6f5f0;
     border-bottom: 1px solid #c8c8c8;
+    width: 100%;
 }
 
 
-header .inner{
-    width: 1100px;
+header > .inner{
     height: 120px;
-    margin: 0 auto;
-    position: relative;
+    
     
 }
 
@@ -85,7 +94,7 @@ header .sub-menu .search{
 }
 
 header .sub-menu .search input{
-    width: 36px;
+    width: 36px;    
     height: 34px;
     padding: 4px 10px;
     border: 1px solid #ccc;
@@ -115,4 +124,102 @@ header .sub-menu .search .material-icons{
 
 header .sub-menu .search.focused .material-icons{
     opacity: 0;
+}
+
+/* 상단 메인 메뉴 */
+header .main-menu{
+    display: flex;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    z-index: 1;                /* 가장 위에 나타남 */
+}
+
+header .main-menu .item{
+
+}
+
+
+header .main-menu .item .item__name{
+    padding: 10px 20px 34px 20px;
+    font-family: Arial, sans-serif;
+    font-size:13px;
+}
+
+header .main-menu .item:hover .item__name{
+    background-color: #2c2a29;
+    color: #669900;
+    border-radius: 6px 6px 0 0;
+}
+
+header .main-menu .item .item__contents{
+    width: 100%;
+    position: fixed;
+    left: 0;
+    display: none;
+}
+
+header .main-menu .item:hover .item__contents{
+    display: block;
+}
+
+header .main-menu .item .item__contents .contents__menu{
+    height: 100%;
+    background-color: #2c2a29;
+}
+
+header .main-menu .item .item__contents .contents__menu > ul{
+    display: flex;
+    padding: 20px 0;
+}
+
+header .main-menu .item .item__contents .contents__menu > ul > li{
+    width: 220px;
+}
+
+header .main-menu .item .item__contents .contents__menu > ul > li >h4{
+    padding:3px 0 12px 0;
+    font-size: 14px;
+    color: #fff;
+}
+
+header .main-menu .item .item__contents .contents__menu > ul > li > ul li{
+    padding: 5px 0;
+    font-size: 12px;
+    color: #999;
+    cursor: pointer;
+}
+
+header .main-menu .item .item__contents .contents__menu > ul > li > ul li:hover{
+    color:#669900;
+}
+
+header .main-menu .item .item__contents .contents__texture{
+    padding: 26px 0;
+    font-size: 12px;
+    background-image: url('../reference file/images/main_menu_pattern.jpg');
+}
+
+header .main-menu .item .item__contents .contents__texture h4{
+    color: #fff;
+    font-weight: 700;
+}
+
+header .main-menu .item .item__contents .contents__texture p{
+    color: #669900;
+    margin: 4px 0 14px;
+}
+
+header .badges{
+    position: absolute;
+    top:132px;
+    right: 12px;
+}
+
+header .badges .badge{
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    box-shadow: 4px 4px 10px rgb(0,0,0,.2);
+    cursor: pointer;
 }
